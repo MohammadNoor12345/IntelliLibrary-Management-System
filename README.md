@@ -33,25 +33,6 @@ Built with **HTML, CSS, JavaScript, Bootstrap, PHP, and SQL**, this project prov
 
 ---
 
-## 📸 Screenshots / Demo
-
-> Add screenshots of your project here for better presentation.
-> Replace `path/to/image.png` with your actual images from your repo.
-
-**Homepage**
-![Homepage](path/to/homepage.png)
-
-**Books Section**
-![Books](path/to/books.png)
-
-**Cart Page**
-![Cart](path/to/cart.png)
-
-**Help & Support Page**
-![Login](path/to/Help & Support.png)
-
-
----
 
 ## ⚙️ Installation
 
@@ -102,5 +83,5 @@ This project is licensed under the **MIT License** – free to use and modify.
 
 ✨ With **IntelliLibrary**, managing libraries becomes **simpler, smarter, and more efficient**.
 
----
+
 
