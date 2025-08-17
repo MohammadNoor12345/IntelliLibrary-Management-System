@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Explore a vast collection of books and ebooks with easy navigation and seamless checkout at MyLibrary.">
+    <meta name="keywords" content="library, books, ebooks, online library, book collection, MyLibrary">
+    <meta name="robots" content="index, follow">
+
+    <title>MyLibrary - Cart</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Custom Styles for Cart Page -->
+    <style>
+        /* Custom Styles for Cart Page */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: auto;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-quantity input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-actions button {
+            margin-left: 10px;
+        }
+
+        .promo-code {
+            margin-top: 20px;
+        }
+
+        .promo-code input {
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .promo-code button {
+            margin-top: 10px;
+        }
+
+        .cart-total,
+        .cart-buttons,
+        .recommendations,
+        .related-products {
+            margin-top: 30px;
+        }
+
+        .related-products img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .related-products h5 {
+            margin: 5px 0;
+        }
+
+        .checkout-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        .checkout-info h4 {
+            margin-bottom: 20px;
+        }
+
+        .checkout-info p {
+            margin-bottom: 10px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .cart-empty img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .btn-outline-custom {
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Styles for the modal popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, #4facfe, #00f2fe); border-bottom: 3px solid #3e3e3e;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="MyLibrary Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="books.html"><b>Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ebooks.html"><b>E-Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html"><b>Help & Support</b></a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> My Cart
+                            <span id="cart-badge" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="profile.html">My Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <!-- Cart Page Content -->
+    <section id="cart" class="py-5">
+        <div class="container">
+            <h2 class="mb-4">My Cart</h2>
+
+            <div id="cart-items">
+                <!-- Example cart item -->
+                <div class="cart-item">
+                    <img src="images/B (9).jpg" alt="Book Cover">
+                    <div class="cart-item-details">
+                        <h5>Fusion Strategy: How Real-Time Data and AI Will Power the Industrial Future</h5>
+                        <p>Author: Vijay Govindarajan</p>
+                        <p>$15.99</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="number" value="1" min="1" onchange="updateQuantity(this, 0)">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="btn btn-outline-info btn-sm" onclick="showReservationModal()">Reserve</button>
+                        <button class="btn btn-outline-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                    </div>
+                </div>
+                <!-- End of example cart item -->
+            </div>
+
+            <div class="promo-code">
+                <h4>Apply Promo Code</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter promo code">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Apply</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-total">
+                <p>Total: <span id="subtotal">$15.99</span></p>
+            </div>
+
+            <div class="cart-buttons">
+                <a href="checkout.html" class="btn btn-primary btn-lg mr-3">Checkout</a>
+                
+            </div>
+
+            <div id="cart-empty-message" class="cart-empty" style="display: none;">
+                <img src="images/empty-cart.png" alt="Empty Cart">
+                <p>Your cart is empty.</p>
+                <a href="books.html" class="btn btn-outline-primary">Browse Books</a>
+            </div>
+
+            <div class="recommendations">
+                <h3>Recommended for you</h3>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="images/B (1).jpg" alt="Recommended Book 1">
+                        <h5>Mastering the Data Paradox</h5>
+                        <p>$19.99</p>
+                        <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="related-products">
+                <h3>Related Products</h3>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="images/B (11).jpg" alt="Related Book 1">
+                        <h5>Related Book 1</h5>
+                        <p>$19.99</p>
+                        <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="images/B (2).jpg" alt="Related Book 2">
+                        <h5>Related Book 2</h5>
+                        <p>$24.99</p>
+                        <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="images/B (3).jpg" alt="Related Book 3">
+                        <h5>Related Book 3</h5>
+                        <p>$14.99</p>
+                        <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="images/B (4).jpg" alt="Related Book 4">
+                        <h5>Related Book 4</h5>
+                        <p>$17.99</p>
+                        <button class="btn btn-outline-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="checkout-info">
+                <h4>Checkout Information</h4>
+                <p>Thank you for choosing MyLibrary for your reading needs. Please review your cart items and proceed to checkout when ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <footer class="bg-dark text-white text-center py-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Us Section -->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <p>Email: mylibrary4all@gmail.com</p>
+                        <p>Phone: 1270015500</p>
+                    </div>
+    
+                    <!-- Copyright Section -->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <div class="text-center p-3">
+                            &copy; 2024 MyLibrary. All rights reserved.
+                        </div>
+                    </div>
+    
+                    <!-- Follow Us Section -->
+                    <div class="col-lg-4 col-md-12">
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.facebook.com" target="_blank"
+                            class="btn btn-outline-light btn-floating m-1" role="button"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"
+                            class="btn btn-outline-light btn-floating m-1" role="button"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"
+                            class="btn btn-outline-light btn-floating m-1" role="button"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/?lang=en" target="_blank"
+                            class="btn btn-outline-light btn-floating m-1" role="button"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com" target="_blank"
+                            class="btn btn-outline-light btn-floating m-1" role="button"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Your book is now reserved.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for Cart Page -->
+    <script>
+        // Update cart badge based on the number of items
+        function updateCartBadge() {
+            const cartItems = document.querySelectorAll('.cart-item').length;
+            document.getElementById('cart-badge').innerText = cartItems;
+        }
+
+        // Update quantity and subtotal
+        function updateQuantity(element, delta) {
+            const input = element.parentElement.querySelector('input');
+            let quantity = parseInt(input.value) + delta;
+            if (quantity < 1) quantity = 1;
+            input.value = quantity;
+
+            updateSubtotal();
+        }
+
+        // Remove item from cart
+        function removeItem(button) {
+            const cartItem = button.closest('.cart-item');
+            cartItem.remove();
+
+            updateCartBadge();
+            updateSubtotal();
+        }
+
+        // Update subtotal based on item quantities
+        function updateSubtotal() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            let subtotal = 0;
+
+            cartItems.forEach(item => {
+                const price = parseFloat(item.querySelector('.cart-item-details p:last-child').innerText.substring(1));
+                const quantity = parseInt(item.querySelector('.cart-item-quantity input').value);
+                subtotal += price * quantity;
+            });
+
+            document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
+
+            if (cartItems.length === 0) {
+                document.getElementById('cart-items').style.display = 'none';
+                document.getElementById('cart-empty-message').style.display = 'block';
+            } else {
+                document.getElementById('cart-items').style.display = 'block';
+                document.getElementById('cart-empty-message').style.display = 'none';
+            }
+        }
+
+        // Function to show reservation modal
+        function showReservationModal() {
+            var modal = document.getElementById('reservationModal');
+            modal.style.display = 'block';
+
+            // Close modal when clicking on close button
+            var closeModal = document.getElementsByClassName('close')[0];
+            closeModal.onclick = function () {
+                modal.style.display = 'none';
+            }
+
+            // Close modal when clicking outside the modal
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        }
+
+        // Initial cart badge update
+        updateCartBadge();
+        updateSubtotal();
+    </script>
+</body>
+
+</html>

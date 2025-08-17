@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Explore a vast collection of books and ebooks with easy navigation and seamless checkout at MyLibrary.">
+    <meta name="keywords" content="library, books, ebooks, online library, book collection, MyLibrary">
+    <meta name="robots" content="index, follow">
+
+    <title>MyLibrary</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        #date-time {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4facfe;
+        }
+        #clock {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00f2fe;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, #4facfe, #00f2fe); border-bottom: 3px solid #3e3e3e;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="MyLibrary Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="books.html"><b>Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ebooks.html"><b>E-Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html"><b>Help & Support</b></a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> My Cart
+                            <span id="cart-badge" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="profile.html">My Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
+
+    <!-- Date and Time Display -->
+    <section class="py-3">
+        <div class="container text-center">
+            <p id="date-time" class="lead"></p>
+            <p id="clock" class="lead"></p>
+        </div>
+    </section>
+
+    <!-- Home Page Content -->
+    <section id="home" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h1>Welcome to MyLibrary</h1>
+                    <p class="lead">Explore a vast collection of books and ebooks with easy navigation and seamless checkout.</p>
+                    <a href="books.html" class="btn btn-primary btn-lg mr-3">Explore Books</a>
+                    <a href="ebooks.html" class="btn btn-secondary btn-lg">Explore E-Books</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/side logo.jpg" alt="Library Image" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section id="featured-books" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Books</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/FB- (1).jpg" class="card-img-top" alt="Book 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Argumentative Indian : Writings On India</h5>
+                            <p class="card-text">Author: Amartya Sen</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/FB- (2).jpg" class="card-img-top" alt="Book 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Fall of Civilizations: Stories of Greatness and Decline</h5>
+                            <p class="card-text">Author: Paul Cooper</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/FB- (3).jpg" class="card-img-top" alt="Book 3">
+                        <div class="card-body">
+                            <h5 class="card-title">THE BLUE UMBRELLA</h5>
+                            <p class="card-text">Author: Ruskin Bond</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto text-center">
+                    <h2>Watch Our MyLibrary From Inside</h2>
+                    <div class="embed-responsive embed-responsive-16by9 mt-4">
+                        <video class="embed-responsive-item" src="library video.mp4" controls autoplay loop></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Us Section -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p>Email: mylibrary4all@gmail.com</p>
+                    <p>Phone: 1270015500</p>
+                </div>
+
+                <!-- Copyright Section -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="text-center p-3">
+                        &copy; 2024 MyLibrary. All rights reserved.
+                    </div>
+                </div>
+
+                <!-- Follow Us Section -->
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/?lang=en" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('date-time');
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+
+            dateTimeElement.textContent = now.toLocaleDateString('en-US', dateOptions);
+            clockElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

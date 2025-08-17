@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Explore a vast collection of books and ebooks with easy navigation and seamless checkout at MyLibrary.">
+    <meta name="keywords" content="library, books, ebooks, online library, book collection, MyLibrary">
+    <meta name="robots" content="index, follow">
+
+    <title>MyLibrary</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, #4facfe, #00f2fe); border-bottom: 3px solid #3e3e3e;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="MyLibrary Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="books.html"><b>Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ebooks.html"><b>E-Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html"><b>Help & Support</b></a>
+                    </li>
+                </ul>
+    
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+    
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> My Cart
+                            <span id="cart-badge" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="profile.html">My Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+
+    <!-- eBooks Page Content -->
+    <section id="ebooks" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Explore eBooks</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p1.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Atomic Habits</h5>
+                            <p class="card-text">Author: James Clear</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Atomic Habits (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p3.png" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Data Science Handbook</h5>
+                            <p class="card-text">Author: Jake VanderPlas</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Python Data Science Handbook (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p5.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Hacking - The Art of Exploitation 2nd Ed</h5>
+                            <p class="card-text">Author: Jon Erickson</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Hacking - The Art of Exploitation 2nd Ed (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p2.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer organization and design 3rd edition</h5>
+                            <p class="card-text">Author: Devid A. Patterson, John L. Hennessy</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Computer organization and design 3rd edition (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p3.png" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Data Science Handbook</h5>
+                            <p class="card-text">Author: Jake VanderPlas</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Python Data Science Handbook (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p4.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Essential Grammar in Use 4th Edition</h5>
+                            <p class="card-text">Author: Raymond Murphy</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Essential Grammar in Use 4th Edition by R. Murphy (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p5.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Hacking - The Art of Exploitation 2nd Ed</h5>
+                            <p class="card-text">Author: Jon Erickson</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Hacking - The Art of Exploitation 2nd Ed (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p3.png" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Data Science Handbook</h5>
+                            <p class="card-text">Author: Jake VanderPlas</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/Python Data Science Handbook (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/p6.jpg" class="card-img-top" alt="eBook 1">
+                        <div class="card-body">
+                            <h5 class="card-title">How Technology Works</h5>
+                            <p class="card-text">Author: Gregory McCarthy</p>
+                            <button class="btn btn-primary preview-btn" data-href="LMS BOOKS/How Technology Works (PDF).pdf">Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewModalLabel">Loading</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your file is opening, please wait....
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Us Section -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p>Email: mylibrary4all@gmail.com</p>
+                    <p>Phone: 1270015500</p>
+                </div>
+
+                <!-- Copyright Section -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="text-center p-3">
+                        &copy; 2024 MyLibrary. All rights reserved.
+                    </div>
+                </div>
+
+                <!-- Follow Us Section -->
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/?lang=en" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var previewButtons = document.querySelectorAll('.preview-btn');
+            var previewModal = $('#previewModal');
+
+            previewButtons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var href = button.getAttribute('data-href');
+                    previewModal.modal('show');
+                    setTimeout(function() {
+                        window.open(href, '_blank');
+                        previewModal.modal('hide');
+                    }, 3000); // 3 seconds delay before opening the file
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Explore a vast collection of books and ebooks with easy navigation and seamless checkout at MyLibrary.">
+    <meta name="keywords" content="library, books, ebooks, online library, book collection, MyLibrary">
+    <meta name="robots" content="index, follow">
+
+    <title>MyLibrary</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, #4facfe, #00f2fe); border-bottom: 3px solid #3e3e3e;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.jpg" alt="MyLibrary Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="books.html"><b>Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ebooks.html"><b>E-Books</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html"><b>Help & Support</b></a>
+                    </li>
+                </ul>
+    
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+    
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fa fa-shopping-cart"></i> My Cart
+                            <span id="cart-badge" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="profile.html">My Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+
+    <!-- Help Page Content -->
+<section id="help" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Help & Support</h2>
+        <div class="row">
+            <!-- FAQs Column -->
+            <div class="col-md-6">
+                <h4>FAQs</h4>
+                <div class="accordion" id="faqAccordion">
+                    <div class="card">
+                        <div class="card-header" id="faqHeading1">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                    How do I update my profile?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                You can go to your profile page and click on the edit button to update your
+                                information.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading2">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    Can I reserve a book that is currently checked out?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Yes, you can place a reservation on a book that is currently checked out. You will be notified when the book becomes available.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading3">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How can I renew a borrowed book?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                To renew a borrowed book, log into your account, go to your Cart items, and click the "Renew" button. Note that renewals are subject to availability and library policies.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading4">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse3">
+                                    How do I know when my borrowed book is due for return?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading3"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Due dates for borrowed books are displayed in the "My Cart Items" section of your account. You will also receive email reminders as the due date approaches.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading5">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse3">
+                                    Are there any membership fees?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading3"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Membership fees vary. Please check the "Membership" section for detailed information on fees and benefits.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading6">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse3">
+                                    Is E-books are free for all?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading3"
+                            data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Yes ,it is free for all without any fee.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Column -->
+            <div class="col-md-6">
+                <h4>Contact Us For Any Assistance</h4>
+                <form action="contactform.php" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="query">Query:</label>
+                        <textarea class="form-control" id="query" name="query" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Suggestions and Feedback Section -->
+<section id="suggestions-feedback" class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Suggestions Form Column -->
+            <div class="col-md-6">
+                <h4>Suggestions</h4>
+                <form action="suggestionsform.php" method="POST" id="suggestionsForm">
+                    <div class="form-group">
+                        <label for="suggestionName">Name:</label>
+                        <input type="text" class="form-control" id="suggestionName" name="suggestionName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="suggestionEmail">Email:</label>
+                        <input type="email" class="form-control" id="suggestionEmail" name="suggestionEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="suggestion">Suggestion:</label>
+                        <textarea class="form-control" id="suggestion" name="suggestion" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- Feedback Form Column -->
+            <div class="col-md-6">
+                <h4>Feedback</h4>
+                <form action="feedbackform.php" method="POST" id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedbackName">Name:</label>
+                        <input type="text" class="form-control" id="feedbackName" name="feedbackName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackEmail">Email:</label>
+                        <input type="email" class="form-control" id="feedbackEmail" name="feedbackEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <select class="form-control" id="rating" name="rating" required>
+                            <option value="1">1 Star</option>
+                            <option value="2">2 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="5">5 Stars</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Feedback:</label>
+                        <textarea class="form-control" id="feedback" name="feedback" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+    <!-- Modal for submission confirmation -->
+    <div class="modal fade" id="submissionModal" tabindex="-1" aria-labelledby="submissionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="submissionModalLabel">Query Submitted</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your query has been submitted successfully. We will get back to you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Submit form handling with jQuery
+        $(document).ready(function() {
+            $('#contactForm').submit(function(event) {
+                event.preventDefault();
+                $('#submissionModal').modal('show');
+                
+            });
+        });
+    </script>
+    
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Us Section -->
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <h5 class="text-uppercase">Contact Us</h5>
+                <p>Email: mylibrary4all@gmail.com</p>
+                <p>Phone: 1270015500</p>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <div class="text-center p-3">
+                    &copy; 2024 MyLibrary. All rights reserved.
+                </div>
+            </div>
+
+            <!-- Follow Us Section -->
+            <div class="col-lg-4 col-md-12">
+                <h5 class="text-uppercase">Follow Us</h5>
+                <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/?lang=en" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-twitter"></i></a>
+                <a href="https://in.linkedin.com" target="_blank" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
